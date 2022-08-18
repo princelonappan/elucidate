@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="tests/bootstrap.php"
+         convertDeprecationsToExceptions="false"
+>
+    <php>
+        <ini name="display_errors" value="1" />
+        <ini name="error_reporting" value="-1" />
+        <server name="APP_ENV" value="test" force="true" />
+        <server name="SHELL_VERBOSITY" value="-1" />
+        <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
+        <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />
+        <env name="TEST_BASE_URL" value="http://localhost:8000" />
+        <env name="INSTITUTION_URL" value="https://api.dev.elucidate.co/institutions" />
+        <env name="CREATE_TICKET_URL" value="https://api.dev.elucidate.co/tickets" />
+        <env name="TOKEN" value="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik0wVTRPRE14T1VORVJUWTBOekZFUWtReE1USkNRVE5GUVVZd01ETkNOVVpFTjBNMVJEY3dNUSJ9.eyJuaWNrbmFtZSI6ImVsdWNpZGF0ZV90ZXN0IiwibmFtZSI6ImVsdWNpZGF0ZV90ZXN0QGVsdWNpZGF0ZS5jbyIsInBpY3R1cmUiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci82MTA2NDMwMTVjYzgzYjFlYmEyNjg1NzA1NDkwMzAyMz9zPTQ4MCZyPXBnJmQ9aHR0cHMlM0ElMkYlMkZjZG4uYXV0aDAuY29tJTJGYXZhdGFycyUyRmVsLnBuZyIsInVwZGF0ZWRfYXQiOiIyMDIyLTA4LTE4VDA5OjIzOjUwLjc4M1oiLCJlbWFpbCI6ImVsdWNpZGF0ZV90ZXN0QGVsdWNpZGF0ZS5jbyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5kZW1vLmVsdWNpZGF0ZS5jby8iLCJzdWIiOiJhdXRoMHw1ZTU5MjZiNmI2MmUyNTE3M2E4NDQ5ZDgiLCJhdWQiOiJGYkQ0eVJCdU9RUGxSUUhnejE4SHBCUlF0c0laXzIxSyIsImlhdCI6MTY2MDgxNDYzMSwiZXhwIjoxNjYwODUwNjMxLCJhdF9oYXNoIjoiYm9sQmFYLUNsSWFDSVp5dlotVnliQSIsIm5vbmNlIjoiflhSa25HYzdNZ0NVekdLeEg2S2ozdDRTSDl1dmNjR3gifQ.Qm6-RtCOErB1AyzxXqKS6YpQLGKrMcZBpnbh177SMN-rdqaD2sB5UDCd8tMkRBOPZotWetWEocLE9Kg7NCyZl_lh60mPFkrpoIGsYDIy8giHzbAI9OR7M_MqKg-uesPKlLqxt0WTeuc4qpCMmAWmvrup11ey-ECfOKpeBAOpk3YVT2EGq8PjOcvPhnbVhmamnHFBpNjIGx5FORSaCe22gAQHeULkpi510Jbv_F7FrpLICdtDE9xn3f2NicDbLS2O0GKR1E7pf_Kje8Bh-iI87Q2Mn5giKLTNoO_NtFqoIOQtVw5Q2hNriQjnvC8iARo1nX74-yi8FeK9rwY80JmE6w" />
+    </php>
+
+    <testsuites>
+        <testsuite name="Project Test Suite">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+
+    <listeners>
+        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+    </listeners>
+
+    <!-- Run `composer require symfony/panther` before enabling this extension -->
+    <!--
+    <extensions>
+        <extension class="Symfony\Component\Panther\ServerExtension" />
+    </extensions>
+    -->
+</phpunit>
