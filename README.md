@@ -25,7 +25,7 @@ This application provides the following API features.
 
 First, clone the repo:
 ```bash
-$ git clone https://github.com/princelonappan/mytheresa.git
+$ git clone https://github.com/princelonappan/elucidate.git
 ```
 
 #### Update Token
