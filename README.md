@@ -40,7 +40,7 @@ Need to update the token in the following section to use the API
 The following docker command will run the application.
 
 ```
-$ cd mytheresa
+$ cd elucidate
 $ docker-compose up -d
 ```
 This will start the application.
